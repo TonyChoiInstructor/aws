@@ -37,9 +37,9 @@ AWS CLI 구성
   
   $ aws ec2 describe-instances
   
-인증 정보 파일 저장소  
+윈도우 인증 정보 파일 저장소 
   C:\Users\root\.aws
     config 파일
     credentials 파일
-
-    
+리눅스 인증 정보 파일 저장소 위치
+  ~/.aws/credentials
