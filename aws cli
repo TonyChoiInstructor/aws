@@ -43,3 +43,10 @@ AWS CLI 구성
     credentials 파일
 리눅스 인증 정보 파일 저장소 위치
   ~/.aws/credentials
+
+
+
+AWS Git Hub CLI 샘플
+  https://github.com/aws/aws-cli/tree/develop/awscli/examples
+  
+  
