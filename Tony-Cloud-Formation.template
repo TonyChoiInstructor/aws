@@ -49,7 +49,7 @@
     "InstanceSecurityGroup" : {
       "Type" : "AWS::EC2::SecurityGroup",
       "Properties" : {
-        "GroupDescription" : "Allow HTTP and SSH access",
+        "GroupDescription" : "Allow RDP and SSH access",
         "SecurityGroupIngress" : [ {
           "IpProtocol" : "tcp",
           "FromPort" : "3389",
