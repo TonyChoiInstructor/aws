@@ -7,10 +7,39 @@ AWS 설치 관련
 AWS CLI Command Reference
   https://docs.aws.amazon.com/ko_kr/cli/latest/index.html
   
+AWS Quickly Configuring (영문)
+  https://docs.amazonaws.cn/en_us/cli/latest/userguide/cli-chap-configure.html#cli-quick-configuration
+  
 AWS CLI 구성
   $ aws configure
-  AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-  AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-  Default region name [None]: us-east-2
+  AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE    (Key ID)
+  AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY    (Secret Key)
+  Default region name [None]: ap-northeast-2      (서울 리전)
   Default output format [None]: json
+  
+  인증 정보 확인
+  $ aws configure list
+  
+  마스킹 되지 않은 인증 정보 확인 명령어
+  $ aws configure get aws_access_key_id
+  $ aws configure get aws_secret_access_key
+  
+인증 프로파일 설정
+  $ aws configure --profile guest01
+  WS Access Key ID [None]: guest1234
+  AWS Secret Access Key [None]: guest5678
+  Default region name [None]: ap-northeast-2
+  Default output format [None]: table
+  
+  프로파일 확인
+  $ aws configure list  (Default 프로파일로 명령어 실행시)
+  $ aws configure list --profile guest01    (특정 프로파일로 명령어 실행시)
+  
+  $ aws ec2 describe-instances
+  
+인증 정보 파일 저장소  
+  C:\Users\root\.aws
+    config 파일
+    credentials 파일
 
+    
