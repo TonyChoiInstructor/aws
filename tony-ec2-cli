@@ -1,6 +1,10 @@
-Tony EC2 인스턴스 만들기
+참고 사이트
+  https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-services-ec2-instances.html
 
 =========================================================================================================================================================================================
+
+
+Tony EC2 인스턴스 만들기
 
 aws ec2 create-security-group --group-name tony-sg --description "Tony Security group for Test"
   --> 생성시 "보안그룹 ID" 적어 놓기 ("sg-0b9ee0ac35d25cc33")
