@@ -1,0 +1,10 @@
+1. S3 버킷의 Region 확인
+  $ aws s3api get-bucket-location --bucket tony-bucket
+
+2. S3 버킷의 Life Cycle 설정
+  $ aws s3api put-bucket-lifecycle --bucket tony-bucket --lifecycle-configuration
+
+
+참고 사이트
+  https://docs.aws.amazon.com/cli/latest/reference/s3api/put-bucket-lifecycle.html
+  http://www.daleseo.com/aws-cli-s3api/
