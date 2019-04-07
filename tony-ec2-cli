@@ -1,0 +1,32 @@
+Tony EC2 인스턴스 만들기
+
+=========================================================================================================================================================================================
+
+aws ec2 create-security-group --group-name tony-sg --description "Tony Security group for Test"
+
+aws ec2 authorize-security-group-ingress --group-name tony-sg --protocol tcp --port 3389 --cidr 0.0.0.0/0
+
+aws ec2 create-key-pair --key-name tony-key --query "KeyMaterial" --output text > tony-key.pem
+
+aws ec2 run-instances --image-id ami-07c691b9c024c63b3 --security-group-ids sg-0b9ee0ac35d25cc33 --count 1 --instance-type t2.micro --key-name tony-key --query "Instances[0].InstanceId"
+
+=========================================================================================================================================================================================
+
+생성 후 확인 명령어 
+
+aws ec2 describe-instances --instance-ids i-02780cb718b9bdc89 --query "Reservations[0].Instances[0].PublicIpAddress"
+
+aws ec2 describe-instances --output json
+
+aws ec2 describe-instances --output table
+
+=========================================================================================================================================================================================
+
+
+aws ec2 create-security-group --group-name tony-sg --vpc-id vpc-xxxxxxxx --description "Tony Security group for Test"
+  --> 리전의 Default VPC를 사용하는 경우 --vpc-id는 생략 가능함.
+
+aws ec2 run-instances --image-id ami-07c691b9c024c63b3 --subnet-id subnet-xxxxxxxx --security-group-ids sg-b018ced5 --count 1 --instance-type t2.micro --key-name tony-key --query "Instances[0].InstanceId"
+  --> Defult Subnet을 사용할 경우 --subnet-id는 생략 가능함.
+  
+--image-id 에서 ami-id는 사용하고 싶은 AMI 인스턴스에서 선택해야 한다. (윈도우, 리눅스 등등 AMI 이미지를 찾아보면 AMI-ID가 있음)
