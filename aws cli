@@ -44,7 +44,8 @@ AWS CLI 구성
 리눅스 인증 정보 파일 저장소 위치
   ~/.aws/credentials
 
-
+AWS EC2 인스턴스 생성 CLI 샘플 참고
+  https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-tutorial.html
 
 AWS Git Hub CLI 샘플
   https://github.com/aws/aws-cli/tree/develop/awscli/examples
