@@ -54,4 +54,5 @@ yum -y install net-tools		net-tools 패키지 설치
 EFS 파일 서비스 연결
   https://docs.aws.amazon.com/ko_kr/efs/latest/ug/wt2-apache-web-server.html
   
-  
+wget 명령어 사용법 
+  https://sisiblog.tistory.com/25
