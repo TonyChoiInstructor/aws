@@ -1,0 +1,52 @@
+시작 시 인스턴스 사용자 데이터 지정
+  Red Hat Enterprise Linux 7.5 (HVM), SSD Volume Type (ami-3eee4150)
+
+=====================================================================================================================
+
+#!/bin/bash -ex
+yum -y install wget
+yum -y install httpd
+systemctl start httpd
+systemctl enable httpd.service
+cd /var/www/html
+wget https://raw.githubusercontent.com/TonyChoiInstructor/aws/master/index.html
+
+=====================================================================================================================
+
+or
+
+wget https://s3-us-west-2.amazonaws.com/us-west-2-aws-training/awsu-spl/spl-03/scripts/examplefiles-elb.zip
+unzip examplefiles-elb.zip
+
+=====================================================================================================================
+
+yum -y install system-config-firewall-tui	방화벽 설치
+vi /etc/sysconfig/iptables			방화벽 설치후 방화벽 룰 설정 편집
+	-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+	-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+	-A INPUT -p tcp -m state --state NEW -m tcp --dport 21 -j ACCEPT
+	-A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
+
+systemctl mask firewalld			방화벽 데몬 Disable
+systemctl start iptables			방화벽 시작
+systemctl enable iptables.service  		부팅시 자동 시작
+
+=====================================================================================================================
+
+yum -y install vsftpd  			vsftpd 설치
+systemctl start vsftpd			ftp 서비스 시작
+systemctl enable vsftpd.service		부팅시 vsftpd 자동 시작
+
+=====================================================================================================================
+
+yum -y install net-tools		net-tools 패키지 설치
+
+=====================================================================================================================
+
+유용한 사이트
+ RHEL 7 Web & MySQL 설치 관련 : https://opentutorials.org/module/1701/10229
+ 
+EFS 파일 서비스 연결
+  https://docs.aws.amazon.com/ko_kr/efs/latest/ug/wt2-apache-web-server.html
+  
+  
