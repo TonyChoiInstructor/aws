@@ -15,6 +15,7 @@ wget https://raw.githubusercontent.com/TonyChoiInstructor/aws/master/index.html
 
 or
 
+yum -y install unzip
 wget https://s3-us-west-2.amazonaws.com/us-west-2-aws-training/awsu-spl/spl-03/scripts/examplefiles-elb.zip
 unzip examplefiles-elb.zip
 
