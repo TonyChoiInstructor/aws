@@ -13,7 +13,7 @@ wget https://raw.githubusercontent.com/TonyChoiInstructor/aws/master/index.html
 
 또는 
 
-wget -O index.html https://raw.githubusercontent.com/TonyChoiInstructor/aws/master/index.htm
+wget -O index.html https://raw.githubusercontent.com/TonyChoiInstructor/aws/master/web-01.html
 
 =====================================================================================================================
 
