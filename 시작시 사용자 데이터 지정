@@ -9,11 +9,11 @@ yum -y install httpd
 systemctl start httpd
 systemctl enable httpd.service
 cd /var/www/html
-wget https://raw.githubusercontent.com/TonyChoiInstructor/aws/master/index.html
-
-또는 
-
 wget -O index.html https://raw.githubusercontent.com/TonyChoiInstructor/aws/master/web-01.html
+
+
+또는
+wget https://raw.githubusercontent.com/TonyChoiInstructor/aws/master/index.html
 
 =====================================================================================================================
 
