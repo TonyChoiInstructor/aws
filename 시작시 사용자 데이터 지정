@@ -13,7 +13,18 @@ wget -O index.html https://raw.githubusercontent.com/TonyChoiInstructor/aws/mast
 
 
 또는
+
 wget https://raw.githubusercontent.com/TonyChoiInstructor/aws/master/index.html
+
+
+또는 (파일 직접 생성)
+
+#!/bin/bash -ex
+yum -y install httpd
+systemctl start httpd
+systemctl enable httpd.service
+cat <<EOF > /var/www/html/index.html
+<html><body><h1>Web Server-01</h1>
 
 =====================================================================================================================
 
