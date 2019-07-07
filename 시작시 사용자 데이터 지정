@@ -71,5 +71,14 @@ wget 명령어 사용법
 =====================================================================================================================
 Windows PowerShell 사용법
 
+   윈도우 서버에서 IIS 설치 하기
 	Install-WindowsFeature -name Web-Server -IncludeManagementTools
-	(윈도우 서버에서 IIS 설치 하기)
+	
+
+   윈도우 서버에서 iSCSI Target 만들기
+	Get-WindowsFeature -Name FS-iSCSITarget-Server
+	Install-WindowsFeature -Name FS-iSCSITarget-Server -IncludeAllSubFeature -IncludeManagementTools
+	New-IscsiVirtualDisk -Path "c:\iSCSIDisks\tony-iscsi-hdd-01.vhdx" -SizeBytes 3GB
+	New-IscsiServerTarget -TargetName "Tony-iSCSI-Target-HDD-01" -InitiatorIds @("iqn:initior01", "iqn:initior02")
+	Add-IscsiVirtualDiskTargetMapping -TargetName "Tony-iSCSI-Target-HDD-01" -Path "c:\iSCSIDisks\tony-iscsi-hdd-01.vhdx"
+	
