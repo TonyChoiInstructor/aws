@@ -100,8 +100,8 @@ Auto-Scaling (Amazon Linux AMI)
 
 #!/bin/sh
 yum -y install httpd php mysql php-mysql
-chkconfig httpd on
-etc/init.d/httpd start
+systemctl start httpd
+systemctl enable httpd.service
 cd /tmp
 wget https://s3.ap-northeast-2.amazonaws.com/cftest20180909/autoscaling-source.zip
 unzip autoscaling-source.zip
