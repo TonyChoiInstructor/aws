@@ -94,3 +94,17 @@ Windows PowerShell 사용법
 	New-IscsiServerTarget -TargetName "Tony-iSCSI-Target-HDD-01" -InitiatorIds @("iqn:initior01", "iqn:initior02")
 	Add-IscsiVirtualDiskTargetMapping -TargetName "Tony-iSCSI-Target-HDD-01" -Path "c:\iSCSIDisks\tony-iscsi-hdd-01.vhdx"
 	
+=====================================================================================================================
+
+Auto-Scaling (Amazon Linux AMI)
+
+#!/bin/sh
+yum -y install httpd php mysql php-mysql
+chkconfig httpd on
+etc/init.d/httpd start
+cd /tmp
+wget https://s3.ap-northeast-2.amazonaws.com/cftest20180909/autoscaling-source.zip
+unzip autoscaling-source.zip
+sudo mv *.php /var/www/html
+
+
