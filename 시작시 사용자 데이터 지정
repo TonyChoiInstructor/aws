@@ -108,3 +108,12 @@ unzip autoscaling-source.zip
 sudo mv *.php /var/www/html
 
 wget https://drive.google.com/file/d/1BqEVv1BHfXAkS7oF6I7D9-thnokBxj0h/view?usp=sharing
+
+
+
+ab -n 30 -c 10 -t 10 http://192.168.0.1/
+  
+# -n 30  요청 수, request 수
+# -c 10  동시사용자 수, 10명의 concurrent user
+# -t 10  테스트 수행시간, 10초동안,  -t 를 쓰게 되면 -n 옵션이 무의미하게 되는 것 같음
+# url 은 '/' 로 끝나야 한다.
