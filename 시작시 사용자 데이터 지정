@@ -103,12 +103,12 @@ yum -y install httpd php mysql php-mysql
 systemctl start httpd
 systemctl enable httpd.service
 cd /tmp
-wget https://drive.google.com/file/d/1BqEVv1BHfXAkS7oF6I7D9-thnokBxj0h/view?usp=sharing
+wget https://s3.ap-northeast-2.amazonaws.com/cftest20180909/autoscaling-source.zip
 unzip autoscaling-source.zip
 sudo mv *.php /var/www/html
 
 
-wget https://s3.ap-northeast-2.amazonaws.com/cftest20180909/autoscaling-source.zip
+
 
 
 ab -n 30 -c 10 -t 10 http://192.168.0.1/
