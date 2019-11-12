@@ -1,0 +1,11 @@
+
+
+vi /etc/ssh/sshd_config
+    PermitRootLogin yes
+    #PermitRootLogin no
+    PasswordAuthentication yes
+    #PasswordAuthentication no
+  
+systemctl restart sshd
+
+
