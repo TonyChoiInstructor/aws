@@ -8,4 +8,6 @@ vi /etc/ssh/sshd_config
   
 systemctl restart sshd
 
+useradd tony
+passwd tony
 
