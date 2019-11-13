@@ -1,3 +1,6 @@
+echo "Welcome Tony's Web Server : $HOSTNAME" > /var/www/html/index.html
+
+
 시작 시 인스턴스 사용자 데이터 지정
   Red Hat Enterprise Linux 7.5 (HVM), SSD Volume Type (ami-3eee4150)
 
