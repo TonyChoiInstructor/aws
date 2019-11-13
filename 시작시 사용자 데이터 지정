@@ -1,3 +1,9 @@
+부하 생성
+yes > null    --> CPU 30~45%
+yes > /dev/null &    --> CPU 99%  (포그라운드로)    fg %번호 (포그라운드로 옮기기)
+
+
+
 #!/bin/sh
 yum -y install httpd
 service httpd start
