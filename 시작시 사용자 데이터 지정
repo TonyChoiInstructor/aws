@@ -3,6 +3,14 @@ yes > null    --> CPU 30~45%
 yes > /dev/null &    --> CPU 99%  (포그라운드로)    fg %번호 (포그라운드로 옮기기
 jobs
 
+Amazon Linux 2 AMI 아래의 사용자데이터 
+
+#!/bin/sh
+yum update -y
+yum install -y httpd.x86_64
+systemctl start httpd.service
+systemctl enable httpd.service
+echo "Welcome Tony's Web Server $(hostname -f)" > /var/www/html/index.html
 
 
 #!/bin/sh
@@ -10,6 +18,9 @@ yum -y install httpd
 service httpd start
 chkconfig httpd on
 echo "Welcome Tony's Web Server : $HOSTNAME" > /var/www/html/index.html
+
+
+
 
 
 시작 시 인스턴스 사용자 데이터 지정
