@@ -55,15 +55,27 @@ aws ec2 modify-vpc-attribute --vpc-id vpc-0ce5c62c00ca2ece4 --enable-dns-hostnam
 
 Tony EC2 인스턴스 만들기
 
-aws ec2 create-security-group --group-name tony-sg --description "Tony Security group for Test"
+aws ec2 create-security-group --group-name Tony-SG --description "Tony Test Security Group" --vpc-id vpc-0ce5c62c00ca2ece4 
   --> 생성시 "보안그룹 ID" 적어 놓기 ("sg-0b9ee0ac35d25cc33")
 
-aws ec2 authorize-security-group-ingress --group-name tony-sg --protocol tcp --port 3389 --cidr 0.0.0.0/0
 
-aws ec2 create-key-pair --key-name tony-key --query "KeyMaterial" --output text > tony-key.pem
+aws ec2 describe-security-groups
 
-aws ec2 run-instances --image-id ami-07c691b9c024c63b3 --security-group-ids sg-0b9ee0ac35d25cc33 --count 1 --instance-type t2.micro --key-name tony-key --query "Instances[0].InstanceId"
-  --> 생성시 "EC2 Instance ID" 적어 놓기 ("i-02780cb718b9bdc89")
+aws ec2 describe-security-groups --group-ids sg-02cb896c864416e3b
+
+
+aws ec2 authorize-security-group-ingress --group-id sg-02cb896c864416e3b --protocol tcp --port 3389 --cidr 0.0.0.0/0
+
+
+aws ec2 create-key-pair --key-name tony-key --query 'KeyMaterial' --output text > tony-key.pem
+
+
+aws ec2 run-instances --image-id ami-0f0ef8bedc8048278 --count 1 --instance-type t2.micro --key-name tony-key --security-group-ids sg-02cb896c864416e3b --subnet-id subnet-033917d3d97abbbc1
+
+
+
+aws ec2 run-instances --image-id ami-0f0ef8bedc8048278 --security-group-ids sg-02cb896c864416e3b --count 1 --instance-type t2.micro --key-name tony-key --query "Instances[0].InstanceId"
+  --> 생성시 "EC2 Instance ID" 적어 놓기 ("i-02780cb718b9bdc89")   i-044493ca5e8a904dd
 
 =========================================================================================================================================================================================
 
