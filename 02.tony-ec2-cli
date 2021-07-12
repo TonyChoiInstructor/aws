@@ -88,6 +88,13 @@ aws ec2 describe-instances --output json
 
 aws ec2 describe-instances --output table
 
+aws ec2 describe-instances --output table --color off
+
+aws ec2 describe-instance-status
+
+
+
+
 =========================================================================================================================================================================================
 
 
@@ -104,6 +111,14 @@ aws ec2 run-instances --image-id ami-07c691b9c024c63b3 --subnet-id subnet-xxxxxx
 
 =========================================================================================================================================================================================
 
+EBS 생성 후 연결
+
+aws ec2 create-volume --volume-type gp2 --size 10 --availability-zone ap-northeast-2a         (볼륨 ID 확인)
+
+aws ec2 attach-volume --volume-id vol-076fc85fc654a48af --instance-id i-044493ca5e8a904dd --device /dev/xvdf
+
+
+=========================================================================================================================================================================================
 
 삭제 하기
 
