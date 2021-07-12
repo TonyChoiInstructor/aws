@@ -10,6 +10,11 @@ VPC
 
 aws ec2 create-vpc --cidr-block 192.168.0.0/16    (VPCID : 적어놓기 - vpc-0965c256c4e42e33b)
 
+aws ec2 describe-vpcs 
+
+aws ec2 describe-vpcs --output table
+aws ec2 describe-vpcs --output table --color off
+
 aws ec2 create-subnet --vpc-id vpc-0965c256c4e42e33b --availability-zone-id apne2-az1 --cidr-block 192.168.1.0/24
 
  == aws ec2 create-subnet --vpc-id vpc-0965c256c4e42e33b --availability-zone ap-northeast-2a --cidr-block 192.168.1.0/24
