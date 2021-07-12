@@ -12,8 +12,12 @@ aws ec2 create-vpc --cidr-block 192.168.0.0/16    (VPCID : 적어놓기 - vpc-09
 
 aws ec2 create-subnet --vpc-id vpc-0965c256c4e42e33b --availability-zone-id apne2-az1 --cidr-block 192.168.1.0/24
 
+ == aws ec2 create-subnet --vpc-id vpc-0965c256c4e42e33b --availability-zone ap-northeast-2a --cidr-block 192.168.1.0/24
+
+
 aws ec2 create-subnet --vpc-id vpc-0965c256c4e42e33b --availability-zone-id apne2-az3 --cidr-block 192.168.2.0/24
 
+  == aws ec2 create-subnet --vpc-id vpc-0965c256c4e42e33b --availability-zone ap-northeast-2c --cidr-block 192.168.2.0/24
 
 aws ec2 create-internet-gateway   (IGW-ID : 적어놓기 - igw-055ec63d0f660f3bb)
 
