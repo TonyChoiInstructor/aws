@@ -24,6 +24,13 @@ aws ec2 create-subnet --vpc-id vpc-0965c256c4e42e33b --availability-zone-id apne
 
   == aws ec2 create-subnet --vpc-id vpc-0965c256c4e42e33b --availability-zone ap-northeast-2c --cidr-block 192.168.2.0/24
 
+
+aws ec2 describe-subnets --filter "Name=availability-zone,Values=ap-northeast-2c" --output table --color off
+
+
+
+
+
 aws ec2 create-internet-gateway   (IGW-ID : 적어놓기 - igw-055ec63d0f660f3bb)
 
 aws ec2 attach-internet-gateway --vpc-id vpc-0965c256c4e42e33b --internet-gateway-id igw-055ec63d0f660f3bb
