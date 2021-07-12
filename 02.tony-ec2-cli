@@ -46,6 +46,9 @@ aws ec2 associate-route-table  --subnet-id subnet-00ba40e283a79942b --route-tabl
 
 aws ec2 modify-subnet-attribute --subnet-id subnet-00ba40e283a79942b --map-public-ip-on-launch
 
+aws ec2 modify-vpc-attribute --vpc-id vpc-0ce5c62c00ca2ece4 --enable-dns-hostnames
+
+
 
 =========================================================================================================================================================================================
 
