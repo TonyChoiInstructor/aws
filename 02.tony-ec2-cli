@@ -115,8 +115,12 @@ EBS 생성 후 연결
 
 aws ec2 create-volume --volume-type gp2 --size 10 --availability-zone ap-northeast-2a         (볼륨 ID 확인)
 
-aws ec2 attach-volume --volume-id vol-076fc85fc654a48af --instance-id i-044493ca5e8a904dd --device /dev/xvdf
+aws ec2 attach-volume --volume-id vol-076fc85fc654a48af --instance-id i-044493ca5e8a904dd --device /dev/xvdf        (볼륨 연결)
 
+
+aws ec2 detach-volume --volume-id vol-076fc85fc654a48af     (볼륨 연결 해제)
+
+aws ec2 delete-volume --volume-id vol-076fc85fc654a48af     (볼륨 삭제)
 
 =========================================================================================================================================================================================
 
